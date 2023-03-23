@@ -1,0 +1,15 @@
+Z:\Program2023\TP1-Bis\bin\Debug\net6.0\TP1-Bis.exe
+Z:\Program2023\TP1-Bis\bin\Debug\net6.0\TP1-Bis.deps.json
+Z:\Program2023\TP1-Bis\bin\Debug\net6.0\TP1-Bis.runtimeconfig.json
+Z:\Program2023\TP1-Bis\bin\Debug\net6.0\TP1-Bis.dll
+Z:\Program2023\TP1-Bis\bin\Debug\net6.0\TP1-Bis.pdb
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.csproj.AssemblyReference.cache
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.AssemblyInfoInputs.cache
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.AssemblyInfo.cs
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.csproj.CoreCompileInputs.cache
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.dll
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\refint\TP1-Bis.dll
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.pdb
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\TP1-Bis.genruntimeconfig.cache
+Z:\Program2023\TP1-Bis\obj\Debug\net6.0\ref\TP1-Bis.dll

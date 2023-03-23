@@ -1,46 +1,60 @@
-﻿
+﻿using System.Threading;
 Dictionary<string,int> listaCursoYValores = new Dictionary<string,int>();
 int ar = 0;
-while(ar != 2){
+while(ar != 3){
+Console.Clear();
 Console.WriteLine("1. Ingrese los importes de un curso");
 Console.WriteLine("2. Ver estadisticas");
+Console.WriteLine("3. Salir");
 ar = int.Parse(Console.ReadLine());
+Console.Clear();
+
 switch(ar){
 
     case 1:
-
-    (string,int) CursoYCantidadAlumnos(){
-    Dictionary<string,int> diccionario = new Dictionary<string,int>();
+    
+    string nombreCurso(){
+    bool ae = true;
+    string Curso = "";
+    while(ae==true){
+    Console.WriteLine("Escriba el nombre del curso");
+    Curso = Console.ReadLine();
+    ae = repetio(Curso);
+    }
+    return Curso;
+    }
+    int sumaValores(){
+    int suma = 0;
     Console.WriteLine("Escriba la cantidad de estudiantes que tiene el curso");
     int alumnos = int.Parse(Console.ReadLine());
     alumnos = mayorACero(alumnos);
-    Console.WriteLine("Escriba el nombre del curso");
-    string Curso = Console.ReadLine();
-    int suma = 0;
-    for(int i = -1; i < alumnos;i++){
-        Console.WriteLine("Ingrese cuanto va a pagar Estudiante N°" + i);
+    for(int i = 0; i < alumnos;i++){
+        Console.WriteLine("Ingrese cuanto va a pagar Estudiante N°" + (i+1));
         suma = suma + int.Parse(Console.ReadLine());
         suma = mayorACero(suma);
     }
-    return (Curso,suma);
+    return suma;
     
 }
-    var (curso,total) = CursoYCantidadAlumnos();
-    listaCursoYValores.Add(curso,total);
-    
+string a = nombreCurso();
+int b = sumaValores();
+listaCursoYValores.Add(a,b);
+
     break;
 
     case 2:
+    
     Console.WriteLine("Estadisticas");
     Console.WriteLine("Curso que más plata puso");
     Console.WriteLine(cursoMasPlata(listaCursoYValores));
     Console.WriteLine("promedio de plata regalado por todos los cursos");
-    Console.WriteLine(Promedio(listaCursoYValores.Count,listaCursoYValores));
+    double aux = Promedio(listaCursoYValores.Count);
+    Console.WriteLine(aux);
     Console.WriteLine("Recaudación total entre los todos cursos");
-    Console.WriteLine(recaTotal((listaCursoYValores)));
+    Console.WriteLine(recaTotal());
     Console.WriteLine("Cantidad de cursos que participan del regalo");
-    Console.WriteLine(cursoTotal(listaCursoYValores));
-    
+    Console.WriteLine(cursoTotal());
+    Thread.Sleep(5000);
     break;
 
 
@@ -49,7 +63,17 @@ switch(ar){
 }
 
 
-
+bool repetio(string nombre){
+    
+    bool k = false;
+    foreach(string i in listaCursoYValores.Keys){
+        if(nombre == i){
+            k = true;
+        }
+        
+    }
+    return k;
+}
 
 
 int mayorACero(int i){
@@ -88,25 +112,26 @@ string cursoMasPlata(Dictionary<string,int> lista){
     return str;
 }
 
-double Promedio(int a,Dictionary<string,int> lista){
-    int suma = 0; 
-    foreach(int elements in lista.Values){
+double Promedio(int a){
+    double suma = 0; 
+    foreach(int elements in listaCursoYValores.Values){
         suma = suma + elements;
+        
     }
     double promedio = suma / a;
     return promedio;
 }
 
-int recaTotal(Dictionary<string,int> lista){
+int recaTotal(){
     int suma = 0;
-    foreach(int elements in lista.Values){
+    foreach(int elements in listaCursoYValores.Values){
         suma = suma + elements;
     }
     return suma;
 }
 
-int cursoTotal(Dictionary<string,int> lista){
-    int i = lista.Count;
+int cursoTotal(){
+    int i = listaCursoYValores.Count;
     return i;
 }
 
