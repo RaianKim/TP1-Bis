@@ -48,10 +48,15 @@ listaCursoYValores.Add(a,b);
     Console.WriteLine("Curso que más plata puso");
     Console.WriteLine(cursoMasPlata(listaCursoYValores));
     Console.WriteLine("promedio de plata regalado por todos los cursos");
-    double aux = Promedio(listaCursoYValores.Count);
-    Console.WriteLine(aux);
+    double suma2 = 0; 
+    foreach(int elements in listaCursoYValores.Values){
+        suma2 = suma2 + elements;
+        
+    }
+    double promedio = suma2 / listaCursoYValores.Count;
+    Console.WriteLine("$" + promedio);
     Console.WriteLine("Recaudación total entre los todos cursos");
-    Console.WriteLine(recaTotal());
+    Console.WriteLine("$" + recaTotal());
     Console.WriteLine("Cantidad de cursos que participan del regalo");
     Console.WriteLine(cursoTotal());
     Thread.Sleep(5000);
@@ -112,15 +117,6 @@ string cursoMasPlata(Dictionary<string,int> lista){
     return str;
 }
 
-double Promedio(int a){
-    double suma = 0; 
-    foreach(int elements in listaCursoYValores.Values){
-        suma = suma + elements;
-        
-    }
-    double promedio = suma / a;
-    return promedio;
-}
 
 int recaTotal(){
     int suma = 0;
